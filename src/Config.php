@@ -1,13 +1,22 @@
 <?php
 
-$config=array();
+namespace itbdw\SendCloud;
 
-$config['v1']['send']='/webapi/mail.send.json';
-$config['v1']['sendTemplate']='/webapi/mail.send_template.json';
+class Config {
+    /**
+     * @return array
+     */
+    public static function getConfig() {
+        $config=array();
 
-$config['v2']['send']='/mail/send';
-$config['v2']['sendTemplate']='/mail/sendtemplate';
+        $config['v1']['send']='/webapi/mail.send.json';
+        $config['v1']['sendTemplate']='/webapi/mail.send_template.json';
 
+        $config['v2']['send']='/mail/send';
+        $config['v2']['sendTemplate']='/mail/sendtemplate';
+        return $config;
+    }
+}
 
 
 

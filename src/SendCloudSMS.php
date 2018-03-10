@@ -13,7 +13,6 @@ use itbdw\SendCloud\Util\TemplateContent;
 use itbdw\SendCloud\Util\VoiceMsg;
 
 
-require_once 'Config.php';
 class SendCloudSMS {
 	private $host = 'http://www.sendcloud.net/';
 	private $sms_user;

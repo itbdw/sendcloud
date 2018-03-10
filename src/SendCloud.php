@@ -3,6 +3,7 @@
 namespace itbdw\SendCloud;
 
 use itbdw\SendCloud\Util\Attachment;
+use itbdw\SendCloud\Config;
 use itbdw\SendCloud\Util\HttpClient;
 use itbdw\SendCloud\Util\Mail;
 use itbdw\SendCloud\Util\Mimetypes;
@@ -12,8 +13,6 @@ use itbdw\SendCloud\Util\SmsMsg;
 use itbdw\SendCloud\Util\TemplateContent;
 use itbdw\SendCloud\Util\VoiceMsg;
 
-
-require_once 'Config.php';
 
 class SendCloud
 {
@@ -35,8 +34,7 @@ class SendCloud
 
     public function sendCommon(Mail $mail)
     {
-        global $config;
-
+        $config = Config::getConfig();
         $method = "POST";
         echo $config [$this->version] ['send'];
         if ($mail->hasAttachment()) {
@@ -429,7 +427,8 @@ class SendCloud
 
     public function sendTemplate(Mail $mail)
     {
-        global $config;
+        $config = Config::getConfig();
+
         $method = "POST";
         if ($mail->hasAttachment()) {
             $bodyData = $this->wrapBody($mail);
