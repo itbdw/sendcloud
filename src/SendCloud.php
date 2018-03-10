@@ -244,7 +244,7 @@ class SendCloud
         }
 
         if ($mail->getUseNotification()) {
-            $data .= $this->appendFormParam('useNotification', $headers, $mime_boundary);
+            $data .= $this->appendFormParam('useNotification', 'true', $mime_boundary);
         }
 
         if ($mail->getTemplateContent()) {
