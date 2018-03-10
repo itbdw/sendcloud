@@ -1,0 +1,29 @@
+{
+  "name": "itbdw/sendcloud",
+  "type": "library",
+  "description": "SendCloud 官方 SDK 封装",
+  "keywords": [
+    "sendclound",
+    "mail"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sendcloud团队"
+    },
+    {
+      "name": "itbdw",
+      "email": "itbudaoweng@gmail.com",
+      "role": "Developer",
+      "homepage": "http://github.com/itbdw"
+    }
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "itbdw\\SendCloud\\": "src/"
+    }
+  }
+}
