@@ -36,7 +36,7 @@ class SendCloud
     {
         $config = Config::getConfig();
         $method = "POST";
-        echo $config [$this->version] ['send'];
+//        echo $config [$this->version] ['send'];
         if ($mail->hasAttachment()) {
             $bodyData = $this->wrapBody($mail);
 
@@ -47,8 +47,10 @@ class SendCloud
             $param = $this->wrapParam($mail);
 
             $resonse = $this->client->post($method, $config [$this->version] ['send'], '', $param);
-            echo $resonse->body();
+//            echo $resonse->body();
         }
+
+        return $resonse;
     }
 
     protected function wrapBody(Mail $mail)
@@ -434,12 +436,14 @@ class SendCloud
             $bodyData = $this->wrapBody($mail);
             $resonse = $this->client->mutilpost('POST', $config [$this->version] ['sendTemplate'], $bodyData ['body'],
                 $bodyData ['header']);
-            echo $resonse->body();
+//            echo $resonse->body();
         } else {
             $param = $this->wrapParam($mail);
             $resonse = $this->client->post($method, $config [$this->version] ['sendTemplate'], '', $param);
-            echo $resonse->body();
+//            echo $resonse->body();
         }
+
+        return $resonse;
     }
 }
 
